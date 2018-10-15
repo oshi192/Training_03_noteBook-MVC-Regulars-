@@ -46,7 +46,8 @@ public class Names {
     @Override
     public String toString() {
         String result;
-        result = surname +
+        result = surname.toUpperCase().charAt(0) +
+                surname.toLowerCase().substring(1,surname.length()-1) +
                 SPACE +
                 name.toUpperCase().charAt(0) +
                 POINT +

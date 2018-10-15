@@ -2,14 +2,14 @@ package controller;
 
 public enum Regulars {
     NAME(" name ",
-            "[A-Za-z]{1,20}",
-            " enter only letters, up to 20 letters, max length - 20"),
+            "[A-Za-z]{2,20}",
+            " enter only letters, up to 20 letters, max length - 20, min - 2"),
     SURNAME(" surname ",
-            "[\\-?\\.?A-Za-z]{1,20}",
-            " enter only letters, up to 20 letters? can be \'.\' or \'-\', max length - 20"),
+            "[\\-?\\.?A-Za-z]{2,20}",
+            " enter only letters, up to 20 letters? can be \'.\' or \'-\', max length - 20, min - 2"),
     SECOND_NAME(" second name ",
-            "[A-Za-z]{1,20}",
-            " enter only letters frop \'a\' to \'z\', max length - 20"),
+            "[A-Za-z]{2,20}",
+            " enter only letters frop \'a\' to \'z\', max length - 20, min - 2"),
 
     UKRAINE_LANG(" прізвище ",
             "[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ']{1,20}",
