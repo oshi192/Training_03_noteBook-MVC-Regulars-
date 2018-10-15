@@ -1,5 +1,9 @@
 package model.entity;
 
+/**
+ * class consists contacts values
+ * class with builder template
+ */
 public class Contacts {
     private String housePhoneNumber;
     private String cellPhoneNumber;

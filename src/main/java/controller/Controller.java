@@ -1,7 +1,7 @@
 package controller;
 
 import model.Model;
-import model.entity.Adress;
+import model.entity.Address;
 import model.entity.Contacts;
 import model.entity.Names;
 import util.Reader;
@@ -16,29 +16,41 @@ public class Controller {
         this.view = view;
     }
 
+    /**
+     * create entity in model? fill its fields? and after that save it into model.
+     */
     public void run() {
         model.createNewEntity();
         setNamesParameterToModel();
-        setAdressParameterToModel();
+        setAddressParameterToModel();
         setContactsParameterToModel();
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
         model.getTmpEntity().setNickName(checkWords(Regulars.NICK_NAME));
         model.saveEntity();
-        model.printLastEntity();
+        //model.printLastEntity();
     }
 
+    /**
+     * Reads string from user and check it with regular expression,
+     *
+     * @param regulars - Enum with regular expression to check with
+     * @return string that has passed comparing regular expression
+     */
     private String checkWords(Regulars regulars) {
         String input;
         do {
-            view.printMessages("please enter " + regulars.name + " " + regulars.descryption);
+            view.printMessages(View.PLEASE_ENTER + regulars.name + View.SPACE + regulars.descryption);
             input = Reader.readString();
             if (!input.matches(regulars.value)) {
-                System.out.println("invalid value, " + regulars.descryption);
+                System.out.println(View.INVALID_VALUE + regulars.descryption);
             }
         } while (!input.matches(regulars.value));
         return input;
     }
 
+    /**
+     * fill fields "Names" field in Entity
+     */
     private void setNamesParameterToModel() {
         model.getTmpEntity().setNames(
                 new Names.Builder()
@@ -49,6 +61,9 @@ public class Controller {
         );
     }
 
+    /**
+     * fill fields "Contacts" field in Entity
+     */
     private void setContactsParameterToModel() {
         model.getTmpEntity().setContacts(
                 new Contacts.Builder()
@@ -61,9 +76,12 @@ public class Controller {
         );
     }
 
-    private void setAdressParameterToModel() {
+    /**
+     * fill fields "Address" field in Entity
+     */
+    private void setAddressParameterToModel() {
         model.getTmpEntity().setAdress(
-                new Adress.Builder().zip(checkWords(Regulars.ZIP))
+                new Address.Builder().zip(checkWords(Regulars.ZIP))
                         .city(checkWords(Regulars.CITY))
                         .street(checkWords(Regulars.STREET))
                         .houseNumber(checkWords(Regulars.HOUSE_NUMBER))

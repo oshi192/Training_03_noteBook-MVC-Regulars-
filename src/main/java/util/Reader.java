@@ -2,7 +2,7 @@ package util;
 
 import java.util.Scanner;
 
-public class Reader implements StringReader {
+public class Reader {
     private static Scanner scanner;
 
     private Reader(){

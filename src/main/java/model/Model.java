@@ -1,6 +1,6 @@
 package model;
 
-import model.entity.Adress;
+import model.entity.Address;
 import model.entity.Contacts;
 import model.entity.Names;
 
@@ -32,7 +32,7 @@ public class Model {
     public class Entity {
         Group group;
         Names names;
-        Adress adress;
+        Address address;
         Contacts contacts;
         private String nickName;
         private String comment;
@@ -43,8 +43,8 @@ public class Model {
             this.names = names;
         }
 
-        public void setAdress(Adress adress) {
-            this.adress = adress;
+        public void setAdress(Address adress) {
+            this.address = adress;
 
         }
 
@@ -81,7 +81,7 @@ public class Model {
             return "Entity{\n" +
                     "group\t\t" + group +
                     "\nnames\t\t" + names +
-                    "\nadress\t\t" + adress +
+                    "\nadress\t\t" + address +
                     "\ncontacts\t" + contacts +
                     "\nnickName\t" + nickName  +
                     "\ncomment\t\t" + comment  +
@@ -90,7 +90,5 @@ public class Model {
                     "}\n";
         }
     }
-    public void printLastEntity(){
-        System.out.println(noteBook.get(noteBook.size()-1).toString());
-    }
+
 }

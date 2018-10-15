@@ -1,13 +1,17 @@
 package model.entity;
 
-public class Adress {
+/**
+ * class consists address values
+ * class with builder template
+ */
+public class Address {
     private String zip;
     private String city;
     private String street;
     private String houseNumber;
     private String flatNumber;
 
-    private Adress(Builder builder) {
+    private Address(Builder builder) {
         this.zip = builder.zip;
         this.city = builder.city;
         this.street = builder.street;
@@ -46,8 +50,8 @@ public class Adress {
             return this;
         }
 
-        public Adress build(){
-            return new Adress(this);
+        public Address build(){
+            return new Address(this);
         }
     }
 
