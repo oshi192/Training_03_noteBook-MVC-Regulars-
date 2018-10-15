@@ -1,5 +1,5 @@
-###noteBook MVC Regulars
-the task was to create a structure for entering data from the command line and validate them using regular expressions.
+### noteBook MVC Regulars
+The task was to create a structure for entering data from the command line and validate them using regular expressions.
 
 Create an entity "Record" in the "Notebook", which consists of:
  - Name of subscriber
