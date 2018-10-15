@@ -11,7 +11,7 @@ import java.util.List;
 public class Model {
     private Entity tmpEntity;
 
-    List<Entity> noteBook = new ArrayList();
+    private List<Entity> noteBook = new ArrayList();
 
     public void createNewEntity() {
         tmpEntity = new Entity();
@@ -22,11 +22,15 @@ public class Model {
     }
 
     public void saveEntity() {
-        if(tmpEntity.getCreateAt()== null){
+        if (tmpEntity.getCreateAt() == null) {
             tmpEntity.setCreateAt(new Date());
         }
         tmpEntity.setUpdateAt(new Date());
         noteBook.add(tmpEntity);
+    }
+
+    public List<Entity> getNoteBook() {
+        return noteBook;
     }
 
     public class Entity {
@@ -60,15 +64,15 @@ public class Model {
             this.comment = comment;
         }
 
-        public void setCreateAt(Date createAt) {
+        void setCreateAt(Date createAt) {
             this.createAt = createAt;
         }
 
-        public void setUpdateAt(Date updateAt) {
+        void setUpdateAt(Date updateAt) {
             this.updateAt = updateAt;
         }
 
-        public Date getCreateAt() {
+        Date getCreateAt() {
             return createAt;
         }
 
@@ -83,8 +87,8 @@ public class Model {
                     "\nnames\t\t" + names +
                     "\nadress\t\t" + address +
                     "\ncontacts\t" + contacts +
-                    "\nnickName\t" + nickName  +
-                    "\ncomment\t\t" + comment  +
+                    "\nnickName\t" + nickName +
+                    "\ncomment\t\t" + comment +
                     "\ncreateAt\t" + createAt +
                     "\nupdateAt\t" + updateAt +
                     "}\n";

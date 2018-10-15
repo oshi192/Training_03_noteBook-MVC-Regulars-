@@ -27,7 +27,7 @@ public class Controller {
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
         model.getTmpEntity().setNickName(checkWords(Regulars.NICK_NAME));
         model.saveEntity();
-        //model.printLastEntity();
+        view.printMessages(model.getNoteBook().get(model.getNoteBook().size() - 1).toString());
     }
 
     /**
