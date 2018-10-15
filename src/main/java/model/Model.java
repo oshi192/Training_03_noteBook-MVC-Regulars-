@@ -21,14 +21,28 @@ public class Model {
         return tmpEntity;
     }
 
-    public void saveEntity() {
+    public boolean saveEntity() {
+        boolean isSaved = false;
         if (tmpEntity.getCreateAt() == null) {
             tmpEntity.setCreateAt(new Date());
         }
         tmpEntity.setUpdateAt(new Date());
-        noteBook.add(tmpEntity);
+        tmpEntity.group = Group.USER; // костыль так ка не знаю зачем тут група
+        if (checkEntityFields()) {
+            noteBook.add(tmpEntity);
+            isSaved = true;
+        }
+        return isSaved;
     }
 
+    private boolean checkEntityFields(){
+        return tmpEntity.contacts != null &
+                tmpEntity.address != null &
+                tmpEntity.names != null &
+                tmpEntity.nickName != null &
+                tmpEntity.comment != null &
+                tmpEntity.group != null;
+    }
     public List<Entity> getNoteBook() {
         return noteBook;
     }

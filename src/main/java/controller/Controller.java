@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.glass.events.ViewEvent;
 import model.Model;
 import model.entity.Address;
 import model.entity.Contacts;
@@ -26,7 +27,9 @@ public class Controller {
         setContactsParameterToModel();
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
         model.getTmpEntity().setNickName(checkWords(Regulars.NICK_NAME));
-        model.saveEntity();
+        if(!model.saveEntity()){
+            view.printMessages(View.CANNOT_SAVE);
+        }
         view.printMessages(model.getNoteBook().get(model.getNoteBook().size() - 1).toString());
     }
 
