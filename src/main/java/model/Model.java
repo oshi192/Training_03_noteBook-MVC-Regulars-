@@ -2,7 +2,6 @@ package model;
 
 import model.entity.Adress;
 import model.entity.Contacts;
-import model.entity.Group;
 import model.entity.Names;
 
 import java.util.ArrayList;

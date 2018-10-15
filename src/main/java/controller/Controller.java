@@ -8,8 +8,8 @@ import util.Reader;
 import view.View;
 
 public class Controller {
-    Model model;
-    View view;
+    private Model model;
+    private View view;
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -21,14 +21,13 @@ public class Controller {
         setNamesParameterToModel();
         setAdressParameterToModel();
         setContactsParameterToModel();
-
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
         model.getTmpEntity().setNickName(checkWords(Regulars.NICK_NAME));
         model.saveEntity();
         model.printLastEntity();
     }
 
-    String checkWords(Regulars regulars) {
+    private String checkWords(Regulars regulars) {
         String input;
         do {
             view.printMessages("please enter " + regulars.name + " " + regulars.descryption);

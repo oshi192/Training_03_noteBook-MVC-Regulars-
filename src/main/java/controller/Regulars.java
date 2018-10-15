@@ -11,9 +11,9 @@ public enum Regulars {
             "[A-Za-z]{1,20}",
             " enter only letters frop \'a\' to \'z\', max length - 20"),
 
-    UKRAINE_LANG("",
+    UKRAINE_LANG(" прізвище ",
             "[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ']{1,20}",
-            ""),
+            " може містити букви лише українського алфавіту, максимум 20"),
 
     ZIP(" zip code ",
             "[0-9]{5,10}",
