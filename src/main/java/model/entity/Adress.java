@@ -53,8 +53,12 @@ public class Adress {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Adress{" +
+                " zip='" + zip + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", flatNumber='" + flatNumber + '\'' +
+                '}';
     }
-
-
 }

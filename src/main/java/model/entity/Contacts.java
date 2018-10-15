@@ -54,7 +54,12 @@ public class Contacts {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Contacts{" +
+                "housePhoneNumber='" + housePhoneNumber + '\'' +
+                ", cellPhoneNumber='" + cellPhoneNumber + '\'' +
+                ", secondCellPhoneNumber='" + secondCellPhoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", skype='" + skype + '\'' +
+                '}';
     }
-
 }

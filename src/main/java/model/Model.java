@@ -76,6 +76,20 @@ public class Model {
         public Date getUpdateAt() {
             return updateAt;
         }
+
+        @Override
+        public String toString() {
+            return "Entity{\n" +
+                    "group\t\t" + group +
+                    "\nnames\t\t" + names +
+                    "\nadress\t\t" + adress +
+                    "\ncontacts\t" + contacts +
+                    "\nnickName\t" + nickName  +
+                    "\ncomment\t\t" + comment  +
+                    "\ncreateAt\t" + createAt +
+                    "\nupdateAt\t" + updateAt +
+                    "}\n";
+        }
     }
     public void printLastEntity(){
         System.out.println(noteBook.get(noteBook.size()-1).toString());

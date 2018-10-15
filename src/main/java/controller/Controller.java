@@ -18,31 +18,9 @@ public class Controller {
 
     public void run() {
         model.createNewEntity();
-        model.getTmpEntity().setNames(
-                new Names.Builder()
-                        .name(checkWords(Regulars.NAME))
-                        .surname(checkWords(Regulars.SURNAME))
-                        .secondName(checkWords(Regulars.SECOND_NAME))
-                        .build()
-        );
-        model.getTmpEntity().setContacts(
-                new Contacts.Builder()
-                        .housePhoneNumber(checkWords(Regulars.HOUSE_PHONE_NUMBER))
-                        .cellPhoneNumber(checkWords(Regulars.CELL_PHONE_NUMBER))
-                        .secondCellPhoneNumber(checkWords(Regulars.SECOND_CELL_PHONE_NUMBER))
-                        .email(checkWords(Regulars.EMAIL))
-                        .skype(checkWords(Regulars.SKYPE))
-                        .build()
-        );
-        model.getTmpEntity().setAdress(
-                new Adress.Builder().zip(checkWords(Regulars.ZIP))
-                        .city(checkWords(Regulars.CITY))
-                        .street(checkWords(Regulars.STREET))
-                        .houseNumber(checkWords(Regulars.HOUSE_NUMBER))
-                        .flatNumber(checkWords(Regulars.FLAT_NUMBER))
-                        .build()
-        );
-
+        setNamesParameterToModel();
+        setAdressParameterToModel();
+        setContactsParameterToModel();
 
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
         model.getTmpEntity().setNickName(checkWords(Regulars.NICK_NAME));
@@ -60,5 +38,38 @@ public class Controller {
             }
         } while (!input.matches(regulars.value));
         return input;
+    }
+
+    private void setNamesParameterToModel() {
+        model.getTmpEntity().setNames(
+                new Names.Builder()
+                        .name(checkWords(Regulars.NAME))
+                        .surname(checkWords(Regulars.SURNAME))
+                        .secondName(checkWords(Regulars.SECOND_NAME))
+                        .build()
+        );
+    }
+
+    private void setContactsParameterToModel() {
+        model.getTmpEntity().setContacts(
+                new Contacts.Builder()
+                        .housePhoneNumber(checkWords(Regulars.HOUSE_PHONE_NUMBER))
+                        .cellPhoneNumber(checkWords(Regulars.CELL_PHONE_NUMBER))
+                        .secondCellPhoneNumber(checkWords(Regulars.SECOND_CELL_PHONE_NUMBER))
+                        .email(checkWords(Regulars.EMAIL))
+                        .skype(checkWords(Regulars.SKYPE))
+                        .build()
+        );
+    }
+
+    private void setAdressParameterToModel() {
+        model.getTmpEntity().setAdress(
+                new Adress.Builder().zip(checkWords(Regulars.ZIP))
+                        .city(checkWords(Regulars.CITY))
+                        .street(checkWords(Regulars.STREET))
+                        .houseNumber(checkWords(Regulars.HOUSE_NUMBER))
+                        .flatNumber(checkWords(Regulars.FLAT_NUMBER))
+                        .build()
+        );
     }
 }

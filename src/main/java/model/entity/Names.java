@@ -9,8 +9,8 @@ public class Names {
 
     private Names(Builder builder){
         this.name = builder.name;
-        this.name = builder.surname;
-        this.name = builder.secondName;
+        this.surname = builder.surname;
+        this.secondName = builder.secondName;
     }
 
     public static class Builder{

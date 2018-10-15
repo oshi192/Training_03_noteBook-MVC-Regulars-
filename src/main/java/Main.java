@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         View view = new View();
         Model model = new Model();
-        System.out.println("asd#".matches(Regulars.COMMENT.value));
-      /* Controller controller = new Controller(model, view);
-        controller.run();*/
+//        System.out.println("asd#".matches(Regulars.COMMENT.value));
+       Controller controller = new Controller(model, view);
+        controller.run();
     }
 }
