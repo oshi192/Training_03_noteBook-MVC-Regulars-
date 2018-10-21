@@ -2,10 +2,7 @@ package util;
 
 import java.util.Scanner;
 
-/**
- * this class singleton that include 1 field  - scanner
- */
-public class Reader {
+public class Reader implements StringReader {
     private static Scanner scanner;
 
     private Reader(){

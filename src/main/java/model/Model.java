@@ -1,6 +1,6 @@
 package model;
 
-import model.entity.Address;
+import model.entity.Adress;
 import model.entity.Contacts;
 import model.entity.Names;
 
@@ -9,61 +9,36 @@ import java.util.Date;
 import java.util.List;
 
 public class Model {
-    private Entity tmpEntity;
-
-    private List<Entity> noteBook = new ArrayList();
+    List<Entity> entity = new ArrayList();
 
     public void createNewEntity() {
-        tmpEntity = new Entity();
+        entity.add(new Entity());
     }
 
-    public Entity getTmpEntity() {
-        return tmpEntity;
-    }
-
-    public boolean saveEntity() {
-        boolean isSaved = false;
-        if (tmpEntity.getCreateAt() == null) {
-            tmpEntity.setCreateAt(new Date());
-        }
-        tmpEntity.setUpdateAt(new Date());
-        tmpEntity.group = Group.USER; // костыль так ка не знаю зачем тут група
-        if (checkEntityFields()) {
-            noteBook.add(tmpEntity);
-            isSaved = true;
-        }
-        return isSaved;
-    }
-
-    private boolean checkEntityFields(){
-        return tmpEntity.contacts != null &
-                tmpEntity.address != null &
-                tmpEntity.names != null &
-                tmpEntity.nickName != null &
-                tmpEntity.comment != null &
-                tmpEntity.group != null;
-    }
-    public List<Entity> getNoteBook() {
-        return noteBook;
+    public Entity getLastEntity() {
+        return entity.get(entity.size()-1);
     }
 
     public class Entity {
-        Group group;
         Names names;
-        Address address;
+        Adress adress;
         Contacts contacts;
         private String nickName;
         private String comment;
         private Date createAt;
         private Date updateAt;
 
+
+        private Entity (){
+
+        }
+
         public void setNames(Names names) {
             this.names = names;
         }
 
-        public void setAdress(Address adress) {
-            this.address = adress;
-
+        public void setAdress(Adress adress) {
+            this.adress = adress;
         }
 
         public void setContacts(Contacts contacts) {
@@ -78,35 +53,12 @@ public class Model {
             this.comment = comment;
         }
 
-        void setCreateAt(Date createAt) {
+        public void setCreateAt(Date createAt) {
             this.createAt = createAt;
         }
 
-        void setUpdateAt(Date updateAt) {
+        public void setUpdateAt(Date updateAt) {
             this.updateAt = updateAt;
         }
-
-        Date getCreateAt() {
-            return createAt;
-        }
-
-        public Date getUpdateAt() {
-            return updateAt;
-        }
-
-        @Override
-        public String toString() {
-            return "Entity{\n" +
-                    "group\t\t" + group +
-                    "\nnames\t\t" + names +
-                    "\nadress\t\t" + address +
-                    "\ncontacts\t" + contacts +
-                    "\nnickName\t" + nickName +
-                    "\ncomment\t\t" + comment +
-                    "\ncreateAt\t" + createAt +
-                    "\nupdateAt\t" + updateAt +
-                    "}\n";
-        }
     }
-
 }
