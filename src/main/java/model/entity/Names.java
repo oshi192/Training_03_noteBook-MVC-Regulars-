@@ -1,5 +1,9 @@
 package model.entity;
 
+/**
+ * class consists names values
+ * class with builder template
+ */
 public class Names {
     private final static String POINT = ".";
     private final static String SPACE = " ";
@@ -7,38 +11,43 @@ public class Names {
     private String surname;
     private String secondName;
 
-    private Names(Builder builder){
+    private Names(Builder builder) {
         this.name = builder.name;
-        this.name = builder.surname;
-        this.name = builder.secondName;
+        this.surname = builder.surname;
+        this.secondName = builder.secondName;
     }
 
-    static class Builder{
+    public static class Builder {
         private String name;
         private String surname;
         private String secondName;
 
-        public Builder name(String value){
+        public Builder name(String value) {
             this.name = value;
             return this;
         }
-        public Builder surname(String value){
+
+        public Builder surname(String value) {
             this.surname = value;
             return this;
         }
-        public Builder secondName(String value){
+
+        public Builder secondName(String value) {
             this.secondName = value;
             return this;
         }
-        public Names build(){
+
+        public Names build() {
             return new Names(this);
         }
 
     }
+
     @Override
     public String toString() {
         String result;
-        result = surname +
+        result = surname.toUpperCase().charAt(0) +
+                surname.toLowerCase().substring(1,surname.length()-1) +
                 SPACE +
                 name.toUpperCase().charAt(0) +
                 POINT +
@@ -47,4 +56,5 @@ public class Names {
                 POINT;
         return result;
     }
+
 }

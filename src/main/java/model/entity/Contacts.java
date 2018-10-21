@@ -1,5 +1,9 @@
 package model.entity;
 
+/**
+ * class consists contacts values
+ * class with builder template
+ */
 public class Contacts {
     private String housePhoneNumber;
     private String cellPhoneNumber;
@@ -54,7 +58,12 @@ public class Contacts {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Contacts{" +
+                "housePhoneNumber='" + housePhoneNumber + '\'' +
+                ", cellPhoneNumber='" + cellPhoneNumber + '\'' +
+                ", secondCellPhoneNumber='" + secondCellPhoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", skype='" + skype + '\'' +
+                '}';
     }
-
 }
