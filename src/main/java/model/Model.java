@@ -36,11 +36,18 @@ public class Model {
     }
 
     boolean isUniqueLogin(String nickname) {
+
         boolean result = true;
-        for (Entity e : noteBook) {
-            if(e.getNickName().equals(nickname)) {
-                result = false;
-            }
+//        for (Entity e : noteBook) {
+//            if(e.getNickName().equals(nickname)) {
+//                result = false;
+//            }
+//        }
+        if ( noteBook.stream()
+                .filter(x -> x.getNickName().equals(nickname))
+                .findFirst()
+                .orElse(null)  != null){
+            result = false;
         }
         return result;
     }

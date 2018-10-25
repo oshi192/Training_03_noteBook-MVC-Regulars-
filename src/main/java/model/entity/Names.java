@@ -47,7 +47,7 @@ public class Names {
     public String toString() {
         String result;
         result = surname.toUpperCase().charAt(0) +
-                surname.toLowerCase().substring(1,surname.length()-1) +
+                surname.toLowerCase().substring(1, surname.length() - 1) +
                 SPACE +
                 name.toUpperCase().charAt(0) +
                 POINT +
@@ -57,4 +57,21 @@ public class Names {
         return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        boolean result;
+        if (this == obj) {
+            result = true;
+        } else if (obj == null) {
+            result = false;
+        } else if (getClass() == obj.getClass()) {
+            Names tmp = (Names) obj;
+            result = this.name.equals(tmp.name) &&
+                    this.surname.equals(tmp.surname) &&
+                    this.secondName.equals(tmp.secondName);
+        } else {
+            result = false;
+        }
+        return result;
+    }
 }

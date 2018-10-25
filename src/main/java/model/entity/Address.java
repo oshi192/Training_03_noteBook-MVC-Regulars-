@@ -18,39 +18,40 @@ public class Address {
         this.houseNumber = builder.houseNumber;
         this.flatNumber = builder.flatNumber;
     }
-    public static class Builder{
+
+    public static class Builder {
         private String zip;
         private String city;
         private String street;
         private String houseNumber;
         private String flatNumber;
 
-        public Builder zip(String value){
-            this.zip =value;
+        public Builder zip(String value) {
+            this.zip = value;
             return this;
         }
 
-        public Builder city(String value){
-            this.city =value;
+        public Builder city(String value) {
+            this.city = value;
             return this;
         }
 
-        public Builder street(String value){
-            this.street =value;
+        public Builder street(String value) {
+            this.street = value;
             return this;
         }
 
-        public Builder houseNumber(String value){
-            this.houseNumber =value;
+        public Builder houseNumber(String value) {
+            this.houseNumber = value;
             return this;
         }
 
-        public Builder flatNumber(String value){
-            this.flatNumber =value;
+        public Builder flatNumber(String value) {
+            this.flatNumber = value;
             return this;
         }
 
-        public Address build(){
+        public Address build() {
             return new Address(this);
         }
     }
@@ -64,5 +65,32 @@ public class Address {
                 ", houseNumber='" + houseNumber + '\'' +
                 ", flatNumber='" + flatNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result;
+        if (this == obj) {
+            result = true;
+        } else if (obj == null) {
+            result = false;
+        } else if (getClass() == obj.getClass()) {
+            Address tmpAddress = (Address) obj;
+            result = this.zip.equals(tmpAddress.zip) &&
+                    this.city.equals(tmpAddress.city) &&
+                    this.street.equals(tmpAddress.street) &&
+                    this.houseNumber.equals(tmpAddress.houseNumber) &&
+                    this.flatNumber.equals(tmpAddress.flatNumber);
+        } else {
+            result = false;
+        }
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 31 * zip.hashCode() + city.hashCode() + street.hashCode()
+                + houseNumber.hashCode() + flatNumber.hashCode();
+        return code;
     }
 }

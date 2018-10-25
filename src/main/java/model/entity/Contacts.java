@@ -66,4 +66,25 @@ public class Contacts {
                 ", skype='" + skype + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result;
+        if (this == obj) {
+            result = true;
+        } else if (obj == null) {
+            result = false;
+        } else if (getClass() == obj.getClass()) {
+            Contacts tmp = (Contacts) obj;
+            result = this.housePhoneNumber.equals(tmp.housePhoneNumber) &&
+                    this.cellPhoneNumber.equals(tmp.cellPhoneNumber) &&
+                    (this.secondCellPhoneNumber.equals(tmp.secondCellPhoneNumber) ||
+                            this.secondCellPhoneNumber == null && tmp.secondCellPhoneNumber == null) &&
+                    this.email.equals(tmp.email) &&
+                    this.skype.equals(tmp.skype);
+        } else {
+            result = false;
+        }
+        return result;
+    }
 }

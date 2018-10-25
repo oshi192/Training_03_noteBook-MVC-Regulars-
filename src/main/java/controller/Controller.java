@@ -26,6 +26,11 @@ public class Controller {
         setAddressParameterToModel();
         setContactsParameterToModel();
         model.getTmpEntity().setComment(checkWords(Regulars.COMMENT));
+        saveEntity();
+        view.printMessages(model.getNoteBook().get(model.getNoteBook().size() - 1).toString());
+    }
+
+    void saveEntity(){
         boolean isSaved = false;
         while (!isSaved){
             try {
@@ -36,9 +41,7 @@ public class Controller {
                 view.printMessages(View.INVALID_VALUE,e.getMessage());
             }
         }
-        view.printMessages(model.getNoteBook().get(model.getNoteBook().size() - 1).toString());
     }
-
     /**
      * Reads string from user and check it with regular expression,
      *
