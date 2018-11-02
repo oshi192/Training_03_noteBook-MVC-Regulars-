@@ -2,7 +2,7 @@ package controller;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-
+@Deprecated
 public interface Resources {
     ResourceBundle bundle = ResourceBundle.getBundle("regulars",new Locale("en"));
     String VAR_NAME = "name";

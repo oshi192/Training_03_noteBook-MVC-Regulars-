@@ -3,6 +3,7 @@ import model.Model;
 import view.View;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws Exception {

@@ -1,7 +1,7 @@
 package controller;
 
 import static controller.Resources.*;
-
+@Deprecated
 public enum Regulars {
     NAME,
     SURNAME,

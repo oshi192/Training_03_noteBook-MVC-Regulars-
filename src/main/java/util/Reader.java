@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * this class singleton that include 1 field  - scanner
  */
+@Deprecated
 public class Reader {
     private static Scanner scanner;
 

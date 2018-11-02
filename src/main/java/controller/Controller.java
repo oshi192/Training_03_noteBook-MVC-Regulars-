@@ -7,7 +7,7 @@ import model.entity.Contacts;
 import model.entity.Names;
 import util.Reader;
 import view.View;
-
+@Deprecated
 public class Controller {
     private Model model;
     private View view;
