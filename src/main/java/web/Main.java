@@ -24,6 +24,7 @@ public class Main extends HttpServlet {
         setAddressParameterToModel(request);
         setContactsParameterToModel(request);
         model.getTmpEntity().setComment(request.getParameter("comment"));
+        model.getTmpEntity().setGroup(request.getParameter("group"));
         model.getTmpEntity().setNickName(request.getParameter("nickName"));
         try {
             model.saveEntity();

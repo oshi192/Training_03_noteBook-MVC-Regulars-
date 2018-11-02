@@ -27,6 +27,7 @@
         Email: <input type="email" name="email"><br>
         Skype: <input type="text" name="skype"><br>
     <h3>Other</h3>
+        Group: <input type="text" name="group"><br>
         Login: <input type="text" name="nickName"><br>
         Comment: <input type="text" name="comment"><br>
         <input type="submit" value="Submit"> <input type="reset">

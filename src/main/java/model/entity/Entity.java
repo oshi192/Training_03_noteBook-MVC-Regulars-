@@ -5,10 +5,10 @@ import model.Group;
 import java.util.Date;
 
 public class Entity {
-    Group group;
     Names names;
     Address address;
     Contacts contacts;
+    private String group;
     private String nickName;
     private String comment;
     private Date createAt;
@@ -21,6 +21,10 @@ public class Entity {
     public void setAdress(Address adress) {
         this.address = adress;
 
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 
     public void setContacts(Contacts contacts) {
