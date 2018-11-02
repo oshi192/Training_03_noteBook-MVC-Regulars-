@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>ua.training.HelloServlet</servlet-class>
+    <servlet-class>web.Main</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -16,3 +16,5 @@
   </servlet-mapping>
 
 </web-app>
+
+
